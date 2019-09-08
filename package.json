@@ -1,0 +1,28 @@
+{
+  "name": "aws-heroku-uploader",
+  "version": "1.0.0",
+  "description": "Testing S3 and Authentication",
+  "main": "server.js",
+  "scripts": {
+    "test": "N/A"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Munch-Z/aws-heroku-uploader.git"
+  },
+  "keywords": [
+    "N/A"
+  ],
+  "author": "Me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Munch-Z/aws-heroku-uploader/issues"
+  },
+  "homepage": "https://github.com/Munch-Z/aws-heroku-uploader#readme",
+  "dependencies": {
+    "aws-sdk": "^2.524.0",
+    "axios": "^0.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1"
+  }
+}

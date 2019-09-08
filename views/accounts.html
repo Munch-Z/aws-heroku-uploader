@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AWS Test</title>
+</head>
+
+<body>
+    <input type="text" id="body">
+    <button id="button">Click Me</button>
+
+    <script>
+
+        const btn = document.getElementById('button');
+
+
+
+
+
+        btn.addEventListener('click', () => {
+            const body = document.getElementById('body').value;
+            const test = {
+                text: body,
+            }
+            console.log(test);
+            console.log(JSON.stringify(test));
+            fetch('/create', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(test),
+            })
+                .then((data) => data.json())
+                .then((data) => console.log(data))
+                .catch((err) => console.log(err));
+        })
+
+
+    </script>
+</body>
+
+</html>

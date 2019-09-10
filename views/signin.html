@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In</title>
+</head>
+
+<body>
+
+    <form id="signin" name="signin">
+        <label for="username">Username: </label>
+        <input id="username" class="text" name="username" type="text" />
+        <label for="password">Password</label>
+        <input id="password" name="password" type="text" />
+        <input id="signinBtn" class="btn" type="submit" value="Sign In" />
+    </form>
+
+    <script>
+
+
+        const signIn = document.getElementById('signinBtn');
+
+        signIn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const user = {
+                username,
+                password,
+            }
+
+            console.log(user);
+
+            fetch('/signin', {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(user),
+        })
+            .then((data) => data.json())
+            .then((data) => console.log(data))
+            .catch((err) => console.log(err));
+
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

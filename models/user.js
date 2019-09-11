@@ -7,12 +7,16 @@ module.exports = function(sequelize, DataTypes) {
             }
         },
         password: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 len: [8, 64]
             }
         },
+        secret_answer: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        }
 
     })
 
